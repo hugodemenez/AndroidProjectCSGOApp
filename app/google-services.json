@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "815665340393",
+    "project_id": "csgoapp-androidproject",
+    "storage_bucket": "csgoapp-androidproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:815665340393:android:328a36c82687e34ae57578",
+        "android_client_info": {
+          "package_name": "com.example.csgoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "815665340393-7m2qbfr3k8p50tdrqbdaajmsbcf2bqcf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZkUdil_rW4f20cc31G_Uf9A7DO9Sh8xI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "815665340393-7m2qbfr3k8p50tdrqbdaajmsbcf2bqcf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
