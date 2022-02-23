@@ -7,35 +7,22 @@
     android:background="@drawable/csgo">
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/buttonSign"
         style="@style/Widget.Material3.Button.ElevatedButton"
         android:layout_width="302dp"
         android:layout_height="67dp"
         android:layout_marginTop="44dp"
         android:backgroundTint="@color/black"
         android:hint="Sign Up"
+        android:onClick="onClickSignin"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
-
-    <Button
-        android:id="@+id/button"
-        style="@style/Widget.Material3.Button.ElevatedButton"
-        android:layout_width="302dp"
-        android:layout_height="67dp"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/material_dynamic_neutral_variant30"
-        android:hint="Log In"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColorHint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
 
     <EditText
-        android:id="@+id/editTextTextPassword2"
+        android:id="@+id/editTextPassword"
         android:layout_width="316dp"
         android:layout_height="48dp"
         android:layout_marginTop="28dp"

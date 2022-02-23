@@ -54,6 +54,7 @@ public class CSGOLogin extends AppCompatActivity {
             }
         }
 
+
         mAuth.createUserWithEmailAndPassword(emailAdress.getText().toString(),password.getText().toString())
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
