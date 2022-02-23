@@ -1,14 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/csgo" >
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="132dp"
+        android:hint="@string/Log_in"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColorHint="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="129dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="303dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/white_round_corners_background"
+        android:hint="@string/Email"
+        android:paddingLeft="10dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColorHint="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:layout_editor_absoluteX="54dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="303dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/white_round_corners_background"
+        android:hint="@string/Password"
+        android:paddingLeft="10dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColorHint="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:layout_editor_absoluteX="54dp" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="259dp"
-        android:layout_height="245dp"
-        android:text="Button"
-        tools:layout_editor_absoluteX="58dp"
-        tools:layout_editor_absoluteY="435dp" />
+        android:id="@+id/button2"
+        style="@style/Widget.Material3.Button.ElevatedButton"
+        android:layout_width="302dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="48dp"
+        android:backgroundTint="@color/black"
+        android:hint="Log In"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColorHint="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        tools:layout_editor_absoluteX="56dp" />
+
+    <Button
+        android:id="@+id/button3"
+        style="@style/Widget.Material3.Button.ElevatedButton"
+        android:layout_width="302dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@android:color/system_neutral1_600"
+        android:hint="Sign Up"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColorHint="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/button2"
+        tools:layout_editor_absoluteX="54dp" />
+
+    <Button
+        android:id="@+id/button4"
+        style="@style/Widget.Material3.Button.ElevatedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Forgot Password ?"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColorHint="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/button3"
+        tools:layout_editor_absoluteX="123dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
