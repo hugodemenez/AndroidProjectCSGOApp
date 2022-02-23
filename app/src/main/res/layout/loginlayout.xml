@@ -6,9 +6,9 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="288dp"
-        android:layout_height="516dp"
+        android:layout_width="202dp"
+        android:layout_height="191dp"
         android:text="Button"
         tools:layout_editor_absoluteX="58dp"
-        tools:layout_editor_absoluteY="164dp" />
+        tools:layout_editor_absoluteY="489dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
