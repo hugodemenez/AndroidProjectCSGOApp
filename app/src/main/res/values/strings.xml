@@ -5,4 +5,5 @@
     <string name="Log_in">Log in</string>
     <string name="Sign_up">Sign up</string>
     <string name="Reset">Reset Password</string>
+    <string name="Log_out">Log out</string>
 </resources>
