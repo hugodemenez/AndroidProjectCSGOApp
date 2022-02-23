@@ -26,7 +26,6 @@
         android:layout_marginTop="44dp"
         android:backgroundTint="@color/black"
         android:hint="Log In"
-        android:onClick="onClick"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,7 +33,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
 
     <Button
-        android:id="@+id/buttonSignup"
+        android:id="@+id/button_Signup"
         style="@style/Widget.Material3.Button.ElevatedButton"
         android:layout_width="302dp"
         android:layout_height="67dp"
@@ -58,7 +57,7 @@
         android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSignup" />
+        app:layout_constraintTop_toBottomOf="@+id/button_Signup" />
 
     <EditText
         android:id="@+id/editTextEmail"
