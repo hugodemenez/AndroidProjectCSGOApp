@@ -33,8 +33,8 @@
 
     <EditText
         android:id="@+id/editTextTextEmailAddress3"
-        android:layout_width="313dp"
-        android:layout_height="48dp"
+        android:layout_width="319dp"
+        android:layout_height="58dp"
         android:layout_marginTop="44dp"
         android:background="@drawable/white_round_corners_background"
         android:ems="10"
