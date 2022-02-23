@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CSGOApp">
         <activity
-            android:name=".MainActivity"
+            android:name=".CSGOSign"
+            android:exported="false" />
+        <activity
+            android:name=".CSGOLogin"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
