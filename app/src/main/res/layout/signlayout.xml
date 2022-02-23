@@ -49,10 +49,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress2"
+        android:id="@+id/editTextEmail"
         android:layout_width="313dp"
         android:layout_height="48dp"
         android:layout_marginTop="32dp"
@@ -85,6 +85,7 @@
         android:layout_height="67dp"
         android:backgroundTint="@color/cardview_shadow_end_color"
         android:contentDescription="@android:string/cancel"
+        android:onClick="onClickBackButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable" />
