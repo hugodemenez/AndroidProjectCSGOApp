@@ -17,6 +17,9 @@
             android:name=".CSGOWelcome"
             android:exported="false" />
         <activity
+            android:name=".Spinner"
+            android:exported="false" />
+        <activity
             android:name=".CSGOSign"
             android:exported="false" />
         <activity

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/material_dynamic_neutral70">
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="407dp"
+        android:layout_height="174dp"
+        android:background="@drawable/infernoflou"
+        android:hint="Inferno"
+        android:paddingLeft="110dp"
+        android:paddingTop="45dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColorHint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="75dp"
+        android:layout_height="57dp"
+        android:backgroundTint="@color/cardview_shadow_end_color"
+        android:contentDescription="@string/Log_out"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logout" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        style="@android:style/Widget.ImageButton"
+        android:layout_width="70dp"
+        android:layout_height="65dp"
+        android:background="@color/cardview_shadow_end_color"
+        android:contentDescription="@android:string/cancel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="265dp"
+        android:layout_height="124dp"
+        android:backgroundTint="@color/black"
+        android:contentDescription="@string/Terrorists"
+        android:entries="@array/array_data"
+        android:spinnerMode="dropdown"
+        android:textAlignment="textEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

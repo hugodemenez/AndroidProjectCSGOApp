@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/material_dynamic_neutral_variant80">
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:hint="Maps"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColorHint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton9"
+        android:layout_width="258dp"
+        android:layout_height="152dp"
+        android:layout_marginTop="36dp"
+        android:contentDescription="inferno"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:srcCompat="@drawable/inferno2" />
+
+    <ImageButton
+        android:id="@+id/imageButton11"
+        android:layout_width="255dp"
+        android:layout_height="143dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/mirage"
+        android:contentDescription="mirage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton9"
+        app:srcCompat="@drawable/mirage" />
+
+    <ImageButton
+        android:id="@+id/imageButton12"
+        android:layout_width="255dp"
+        android:layout_height="143dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/cobblestone"
+        android:contentDescription="cobblestone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton11"
+        app:srcCompat="@drawable/cobblestone" />
+
+    <ImageButton
+        android:id="@+id/imageButton13"
+        android:layout_width="61dp"
+        android:layout_height="66dp"
+        android:background="@color/cardview_shadow_end_color"
+        android:contentDescription="@string/Log_out"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logout" />
+
+    <ImageButton
+        android:id="@+id/imageButton14"
+        android:layout_width="66dp"
+        android:layout_height="61dp"
+        android:background="@color/cardview_shadow_end_color"
+        android:contentDescription="@android:string/cancel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

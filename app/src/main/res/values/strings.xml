@@ -8,4 +8,20 @@
     <string name="Log_out">Log out</string>
     <string name="Quote">Quote of the day</string>
     <string name="Author">Author</string>
+    <string name="Terrorists">Terrorists</string>
+    <string name="Counter_Terrorists">Counter-Terrorists</string>
+
+    <string-array name="array_data">
+        <item>Terrorists</item>
+        <item>Smokes</item>
+        <item>Flashes</item>
+        <item>Incendiary</item>
+    </string-array>
+
+    <string-array name="array_data2">
+        <item>Counter-Terrorists</item>
+        <item>Smokes</item>
+        <item>Flashes</item>
+        <item>Incendiary</item>
+    </string-array>
 </resources>
