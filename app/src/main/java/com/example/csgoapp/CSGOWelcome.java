@@ -9,7 +9,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class CSGOWelcome extends AppCompatActivity {
-    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,10 +16,15 @@ public class CSGOWelcome extends AppCompatActivity {
         setContentView(R.layout.welcomelayout);
 
         // Initialize Firebase Auth
-        mAuth = FirebaseAuth.getInstance();
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
-        // Check if user is signed in (non-null) and update UI accordingly.
+        // If not logged in, finish current activity, and go to login screen
         FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser == null){
+            finish();
+        }
+
+
     }
 
     public void onClickLogout(View view){

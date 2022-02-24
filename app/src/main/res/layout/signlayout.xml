@@ -14,7 +14,7 @@
         android:layout_marginTop="44dp"
         android:backgroundTint="@color/black"
         android:hint="Sign Up"
-        android:onClick="onClickSignin"
+        android:onClick="onClickSign"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"

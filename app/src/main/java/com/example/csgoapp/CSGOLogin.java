@@ -1,26 +1,21 @@
 package com.example.csgoapp;
 
-import static android.content.ContentValues.TAG;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
-import android.content.Intent;
+
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
+
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import java.util.Dictionary;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,13 +28,17 @@ public class CSGOLogin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loginlayout);
-        emailAddress = (EditText) findViewById(R.id.editTextEmail);
-        password = (EditText) findViewById(R.id.editTextPassword);
+        emailAddress = findViewById(R.id.editTextEmail);
+        password = findViewById(R.id.editTextPassword);
 
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
-        // Check if user is signed in (non-null) and update UI accordingly.
+        // Check if user is signed in (non-null) and go to welcome screen if user is logged in.
         FirebaseUser currentUser = mAuth.getCurrentUser();
+
+        if(currentUser != null){
+            new CSGOActivityStarter(this,CSGOWelcome.class);
+        }
     }
 
     public void onClickLogin(View view) {
@@ -59,47 +58,40 @@ public class CSGOLogin extends AppCompatActivity {
 
 
         mAuth.signInWithEmailAndPassword(emailAddress.getText().toString(), password.getText().toString())
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            CSGOActivityStarter starter =new CSGOActivityStarter(context,CSGOWelcome.class);
-                        } else {
-                            password.setError("Wrong password");
-                            password.requestFocus();
-                        }
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()) {
+                        // Sign in success, update UI with the signed-in user's information
+                        new CSGOActivityStarter(context,CSGOWelcome.class);
+                    } else {
+                        password.setError("Wrong password");
+                        password.requestFocus();
                     }
                 });
 
         mAuth.createUserWithEmailAndPassword(emailAddress.getText().toString(),password.getText().toString())
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            Map<String,String> extras = new HashMap<String,String>() {{
-                                put("email",emailAddress.getText().toString());
-                            }};
-
-                            CSGOActivityStarter starter =new CSGOActivityStarter(context,extras,CSGOWelcome.class);
-                        }
+                .addOnCompleteListener(task -> {
+                    if(task.isSuccessful()){
+                        Map<String,String> extras = new HashMap<String,String>() {{
+                            put("email",emailAddress.getText().toString());
+                        }};
+                        new CSGOActivityStarter(context,extras,CSGOWelcome.class);
                     }
                 }
-        );
+                );
     }
 
-    public void onClickSignin(View view) {
+    public void onClickSign(View view) {
         Map<String,String> extras = new HashMap<String,String>() {{
             put("email",emailAddress.getText().toString());
         }};
-        CSGOActivityStarter starter =new CSGOActivityStarter(this,extras,CSGOSign.class);
+        new CSGOActivityStarter(this,extras,CSGOSign.class);
     }
 
     public void onClickReset(View view) {
         Map<String,String> extras = new HashMap<String,String>() {{
             put("email",emailAddress.getText().toString());
         }};
-        CSGOActivityStarter starter =new CSGOActivityStarter(this,extras,CSGOReset.class);
+        new CSGOActivityStarter(this,extras,CSGOReset.class);
     }
 
 

@@ -24,7 +24,6 @@ public class CSGOActivityStarter extends AppCompatActivity{
 
     public void startNewActivity(Context context, Map<String,String> extrasToBundle, Class<?> page){
         Intent intent = new Intent(context, page);
-
         //Iterate over elements in dictionary
         System.out.println("Iterating using enumeration:");
         if(extrasToBundle!=null){
