@@ -25,6 +25,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/cardview_shadow_end_color"
         android:contentDescription="@string/Log_out"
+        android:onClick="onClickLogout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logout" />

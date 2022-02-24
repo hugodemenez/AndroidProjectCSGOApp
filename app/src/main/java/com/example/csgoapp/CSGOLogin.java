@@ -20,9 +20,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class CSGOLogin extends AppCompatActivity {
+import java.util.Dictionary;
+import java.util.HashMap;
+import java.util.Map;
 
-    private final CSGOActivityStarter starter = new CSGOActivityStarter();
+public class CSGOLogin extends AppCompatActivity {
     private EditText emailAddress;
     private EditText password;
     private FirebaseAuth mAuth;
@@ -62,8 +64,7 @@ public class CSGOLogin extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-                            Log.e(TAG, "signInWithEmail:success");
-                            starter.startNewActivity(context,CSGOWelcome.class);
+                            CSGOActivityStarter starter =new CSGOActivityStarter(context,CSGOWelcome.class);
                         } else {
                             password.setError("Wrong password");
                             password.requestFocus();
@@ -76,7 +77,11 @@ public class CSGOLogin extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            startActivity(getIntent(emailAddress.getText().toString(),CSGOWelcome.class));
+                            Map<String,String> extras = new HashMap<String,String>() {{
+                                put("email",emailAddress.getText().toString());
+                            }};
+
+                            CSGOActivityStarter starter =new CSGOActivityStarter(context,extras,CSGOWelcome.class);
                         }
                     }
                 }
@@ -84,16 +89,10 @@ public class CSGOLogin extends AppCompatActivity {
     }
 
     public void onClickSignin(View view) {
-        startActivity(getIntent(emailAddress.getText().toString(),CSGOSign.class));
-    }
-
-
-    private Intent getIntent(String emailAddress,Class page){
-        Intent intent = new Intent(this, page);
-        final Bundle extras = new Bundle();
-        extras.putString("email",emailAddress);
-        intent.putExtras(extras);
-        return intent;
+        Map<String,String> extras = new HashMap<String,String>() {{
+            put("email",emailAddress.getText().toString());
+        }};
+        CSGOActivityStarter starter =new CSGOActivityStarter(this,extras,CSGOSign.class);
     }
 
 

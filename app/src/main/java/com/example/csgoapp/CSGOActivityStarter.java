@@ -6,30 +6,39 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Collection;
 import java.util.Dictionary;
 import java.util.Enumeration;
+import java.util.Iterator;
+import java.util.Map;
 
 public class CSGOActivityStarter extends AppCompatActivity{
 
-    public void startNewActivity(Context context, Dictionary<String,String> extrasToBundle, Class page){
+    public CSGOActivityStarter(Context context, Map<String,String> extrasToBundle, Class<?> page){
+        startNewActivity(context,extrasToBundle,page);
+    }
+
+    public CSGOActivityStarter(Context context, Class<?> page){
+        startNewActivity(context,null,page);
+    }
+
+    public void startNewActivity(Context context, Map<String,String> extrasToBundle, Class<?> page){
         Intent intent = new Intent(context, page);
-        final Bundle bundle = new Bundle();
 
         //Iterate over elements in dictionary
         System.out.println("Iterating using enumeration:");
-        Enumeration<String> e = extrasToBundle.elements();
-        Enumeration<String> ekey = extrasToBundle.keys();
-        while(e.hasMoreElements())
-            System.out.print(e.nextElement() + " ");
-        bundle.putString(ekey.nextElement(),e.nextElement());
-        intent.putExtras(bundle);
-
-        startActivity(intent);
+        if(extrasToBundle!=null){
+            final Bundle bundle = new Bundle();
+            Iterator<String> element = extrasToBundle.values().iterator();
+            Iterator<String>  key = extrasToBundle.keySet().iterator();
+            while(element.hasNext()){
+                bundle.putString(key.next(),element.next());
+                intent.putExtras(bundle);
+            }
+        }
+        context.startActivity(intent);
     }
 
-    public void startNewActivity(Context context, Class page){
-        Intent intent = new Intent(context, page);
-        startActivity(intent);
-    }
+
 
 }

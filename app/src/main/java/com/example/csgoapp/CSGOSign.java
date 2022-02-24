@@ -18,20 +18,20 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Dictionary;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class CSGOSign extends AppCompatActivity {
 
-    private EditText emailAdress;
+    private EditText emailAddress;
     private EditText password;
     private FirebaseAuth mAuth;
-    private final CSGOActivityStarter starter = new CSGOActivityStarter();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signlayout);
-        emailAdress = (EditText) findViewById(R.id.editTextEmail);
+        emailAddress = (EditText) findViewById(R.id.editTextEmail);
         password = (EditText) findViewById(R.id.editTextPassword);
 
         // Initialize Firebase Auth
@@ -45,7 +45,7 @@ public class CSGOSign extends AppCompatActivity {
             final Bundle extras = intent.getExtras();
             if(null!=extras){
                 final String email = extras.getString("email");
-                emailAdress.setText(email);
+                emailAddress.setText(email);
             }
         }
     }
@@ -58,9 +58,9 @@ public class CSGOSign extends AppCompatActivity {
 
     public void onClickSignin(View view){
         Context context =this;
-        if(!Patterns.EMAIL_ADDRESS.matcher(emailAdress.getText()).matches() || TextUtils.isEmpty(emailAdress.getText())){
-            emailAdress.setError("Please provide a valid address");
-            emailAdress.requestFocus();
+        if(!Patterns.EMAIL_ADDRESS.matcher(emailAddress.getText()).matches() || TextUtils.isEmpty(emailAddress.getText())){
+            emailAddress.setError("Please provide a valid address");
+            emailAddress.requestFocus();
             return;
         }
         else{
@@ -72,18 +72,19 @@ public class CSGOSign extends AppCompatActivity {
         }
 
 
-        mAuth.createUserWithEmailAndPassword(emailAdress.getText().toString(),password.getText().toString())
+        mAuth.createUserWithEmailAndPassword(emailAddress.getText().toString(),password.getText().toString())
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                            @Override
                                            public void onComplete(@NonNull Task<AuthResult> task) {
                                                if(task.isSuccessful()){
-                                                   Dictionary<String,String> extras = null;
-                                                   extras.put("email",emailAdress.getText().toString());
-                                                   starter.startNewActivity(context,extras,CSGOWelcome.class);
+                                                   Map<String,String> extras = new HashMap<String,String>() {{
+                                                       put("email",emailAddress.getText().toString());
+                                                   }};
+                                                   CSGOActivityStarter starter =new CSGOActivityStarter(context,extras,CSGOWelcome.class);
                                                }
                                                else{
-                                                   emailAdress.setError("User already exists");
-                                                   emailAdress.requestFocus();
+                                                   emailAddress.setError("User already exists");
+                                                   emailAddress.requestFocus();
                                                }
                                            }
                                        }

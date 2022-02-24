@@ -21,13 +21,10 @@ public class CSGOWelcome extends AppCompatActivity {
 
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-
     }
-
-
 
     public void onClickLogout(View view){
         FirebaseAuth.getInstance().signOut();
-
+        finish();
     }
 }
