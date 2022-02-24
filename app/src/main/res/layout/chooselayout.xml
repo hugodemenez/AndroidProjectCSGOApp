@@ -42,16 +42,24 @@
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <Spinner
-        android:id="@+id/spinner2"
-        android:layout_width="265dp"
-        android:layout_height="124dp"
-        android:backgroundTint="@color/black"
-        android:contentDescription="@string/Terrorists"
-        android:entries="@array/array_data"
-        android:spinnerMode="dropdown"
-        android:textAlignment="textEnd"
+        android:id="@+id/spinnerSide"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <Spinner
+        android:id="@+id/spinnerGrenade"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerSide" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

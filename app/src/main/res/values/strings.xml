@@ -11,15 +11,12 @@
     <string name="Terrorists">Terrorists</string>
     <string name="Counter_Terrorists">Counter-Terrorists</string>
 
-    <string-array name="array_data">
+    <string-array name="side">
         <item>Terrorists</item>
-        <item>Smokes</item>
-        <item>Flashes</item>
-        <item>Incendiary</item>
+        <item>Counter-Terrorists</item>
     </string-array>
 
-    <string-array name="array_data2">
-        <item>Counter-Terrorists</item>
+    <string-array name="grenadeType">
         <item>Smokes</item>
         <item>Flashes</item>
         <item>Incendiary</item>

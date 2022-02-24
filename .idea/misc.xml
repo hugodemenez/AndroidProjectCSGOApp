@@ -3,16 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/guill/AndroidStudioProjects/AndroidProjectCSGOApp/app/src/main/res/drawable/black_round_corners_background.xml" value="0.171" />
-        <entry key="..\:/Users/guill/AndroidStudioProjects/AndroidProjectCSGOApp/app/src/main/res/layout/activity_main.xml" value="0.12" />
-        <entry key="..\:/Users/guill/AndroidStudioProjects/AndroidProjectCSGOApp/app/src/main/res/layout/activity_spinner.xml" value="0.10208333333333333" />
-        <entry key="..\:/Users/guill/AndroidStudioProjects/AndroidProjectCSGOApp/app/src/main/res/layout/infernolayout.xml" value="0.2" />
-        <entry key="..\:/Users/guill/AndroidStudioProjects/AndroidProjectCSGOApp/app/src/main/res/layout/loginlayout.xml" value="0.176" />
-        <entry key="..\:/Users/guill/AndroidStudioProjects/AndroidProjectCSGOApp/app/src/main/res/layout/mapslayout.xml" value="0.1" />
-        <entry key="..\:/Users/guill/AndroidStudioProjects/AndroidProjectCSGOApp/app/src/main/res/layout/resetlayout.xml" value="0.15307971014492755" />
-        <entry key="..\:/Users/guill/AndroidStudioProjects/AndroidProjectCSGOApp/app/src/main/res/layout/signlayout.xml" value="0.16" />
-        <entry key="..\:/Users/guill/AndroidStudioProjects/AndroidProjectCSGOApp/app/src/main/res/layout/welcomelayout.xml" value="0.2" />
-        <entry key="..\:/Users/guill/AndroidStudioProjects/AndroidProjectCSGOApp/app/src/main/res/menu/liste.xml" value="0.25416666666666665" />
+        <entry key="app/src/main/res/drawable/black_round_corners_background.xml" value="0.6585" />
+        <entry key="app/src/main/res/layout/activity_csgosign.xml" value="0.302536231884058" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/infernolayout.xml" value="0.4390625" />
+        <entry key="app/src/main/res/layout/loginlayout.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/mapslayout.xml" value="0.4390625" />
+        <entry key="app/src/main/res/layout/resetlayout.xml" value="0.390625" />
+        <entry key="app/src/main/res/layout/signlayout.xml" value="0.45" />
+        <entry key="app/src/main/res/layout/welcomelayout.xml" value="0.46557971014492755" />
       </map>
     </option>
   </component>
