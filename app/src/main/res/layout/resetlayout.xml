@@ -24,15 +24,16 @@
         android:layout_marginTop="32dp"
         android:backgroundTint="@color/black"
         android:hint="Reset Password"
+        android:onClick="onClickReset"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress3" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmailAddress" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress3"
+        android:id="@+id/editTextEmailAddress"
         android:layout_width="319dp"
         android:layout_height="58dp"
         android:layout_marginTop="44dp"

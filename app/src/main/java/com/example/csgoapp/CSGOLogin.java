@@ -95,5 +95,12 @@ public class CSGOLogin extends AppCompatActivity {
         CSGOActivityStarter starter =new CSGOActivityStarter(this,extras,CSGOSign.class);
     }
 
+    public void onClickReset(View view) {
+        Map<String,String> extras = new HashMap<String,String>() {{
+            put("email",emailAddress.getText().toString());
+        }};
+        CSGOActivityStarter starter =new CSGOActivityStarter(this,extras,CSGOReset.class);
+    }
+
 
 }

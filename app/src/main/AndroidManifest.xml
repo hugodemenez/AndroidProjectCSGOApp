@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CSGOApp">
         <activity
+            android:name=".CSGOReset"
+            android:exported="false" />
+        <activity
             android:name=".CSGOWelcome"
             android:exported="false" />
         <activity
