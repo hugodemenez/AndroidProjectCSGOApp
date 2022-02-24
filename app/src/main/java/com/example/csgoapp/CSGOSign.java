@@ -3,6 +3,7 @@ package com.example.csgoapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -16,12 +17,15 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.Dictionary;
+import java.util.List;
+
 public class CSGOSign extends AppCompatActivity {
 
     private EditText emailAdress;
     private EditText password;
     private FirebaseAuth mAuth;
-
+    private final CSGOActivityStarter starter = new CSGOActivityStarter();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,12 +52,12 @@ public class CSGOSign extends AppCompatActivity {
 
 
     public void onClickBackButton(View view) {
-
-        startActivity(getIntent(emailAdress.getText().toString(),CSGOLogin.class));
+        finish();
     }
 
 
     public void onClickSignin(View view){
+        Context context =this;
         if(!Patterns.EMAIL_ADDRESS.matcher(emailAdress.getText()).matches() || TextUtils.isEmpty(emailAdress.getText())){
             emailAdress.setError("Please provide a valid address");
             emailAdress.requestFocus();
@@ -73,7 +77,9 @@ public class CSGOSign extends AppCompatActivity {
                                            @Override
                                            public void onComplete(@NonNull Task<AuthResult> task) {
                                                if(task.isSuccessful()){
-                                                   startActivity(getIntent(emailAdress.getText().toString(),CSGOWelcome.class));
+                                                   Dictionary<String,String> extras = null;
+                                                   extras.put("email",emailAdress.getText().toString());
+                                                   starter.startNewActivity(context,extras,CSGOWelcome.class);
                                                }
                                                else{
                                                    emailAdress.setError("User already exists");
@@ -84,11 +90,5 @@ public class CSGOSign extends AppCompatActivity {
                 );
     }
 
-    private Intent getIntent(String emailAdress,Class page){
-        Intent intent = new Intent(this, page);
-        final Bundle extras = new Bundle();
-        extras.putString("email",emailAdress);
-        intent.putExtras(extras);
-        return intent;
-    }
+
 }

@@ -3,6 +3,7 @@ package com.example.csgoapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -20,6 +21,13 @@ public class CSGOWelcome extends AppCompatActivity {
 
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
+
+    }
+
+
+
+    public void onClickLogout(View view){
+        FirebaseAuth.getInstance().signOut();
 
     }
 }
