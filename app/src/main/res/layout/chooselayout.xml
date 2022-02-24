@@ -26,6 +26,7 @@
         android:layout_height="57dp"
         android:backgroundTint="@color/cardview_shadow_end_color"
         android:contentDescription="@string/Log_out"
+        android:onClick="onClickLogout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logout" />
@@ -37,6 +38,7 @@
         android:layout_height="65dp"
         android:background="@color/cardview_shadow_end_color"
         android:contentDescription="@android:string/cancel"
+        android:onClick="onClickBackButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable" />

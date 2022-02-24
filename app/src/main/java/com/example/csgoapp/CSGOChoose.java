@@ -2,9 +2,13 @@ package com.example.csgoapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class CSGOChoose extends AppCompatActivity {
 
@@ -32,6 +36,16 @@ public class CSGOChoose extends AppCompatActivity {
         spinnerGrenade.setAdapter(adapterGrenade);
     }
 
+    public void onClickBackButton(View view) {
 
+        finish();
+    }
 
+    public void onClickLogout(View view){
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(this, CSGOLogin.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        finish();
+    }
 }
