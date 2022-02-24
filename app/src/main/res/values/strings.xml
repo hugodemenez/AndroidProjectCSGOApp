@@ -6,4 +6,6 @@
     <string name="Sign_up">Sign up</string>
     <string name="Reset">Reset Password</string>
     <string name="Log_out">Log out</string>
+    <string name="Quote">Quote of the day</string>
+    <string name="Author">Author</string>
 </resources>
