@@ -1,5 +1,6 @@
 package com.example.csgoapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -7,6 +8,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
 
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
@@ -17,7 +19,15 @@ import com.google.firebase.auth.FirebaseUser;
 
 
 import java.util.HashMap;
+
 import java.util.Map;
+
+import api.APIService;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class CSGOLogin extends AppCompatActivity {
     private EditText emailAddress;
@@ -39,6 +49,7 @@ public class CSGOLogin extends AppCompatActivity {
         if(currentUser != null){
             new CSGOActivityStarter(this,CSGOWelcome.class);
         }
+        callAPI();
     }
 
     public void onClickLogin(View view) {
@@ -92,6 +103,34 @@ public class CSGOLogin extends AppCompatActivity {
             put("email",emailAddress.getText().toString());
         }};
         new CSGOActivityStarter(this,extras,CSGOReset.class);
+    }
+
+    void callAPI(){
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://api.quotable.io/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        APIService service = retrofit.create(APIService.class);
+
+        service.getQuote("random").enqueue(new Callback<String>() {
+            // Response retrieved
+            @Override
+            public void onResponse(@NonNull Call<String> call, @NonNull Response<String>response) {
+                String quote = response.body();
+                if (quote != null){
+                    Log.e("RESPONSE API", quote);
+                    emailAddress.setText(quote);
+                } else {
+                    Log.e("RESPONSE API", "Response null");
+                }
+            }
+            // Failure callback
+            @Override
+            public void onFailure(@NonNull Call<String> call, @NonNull Throwable t) {
+                Log.e("RESPONSE API", "Failure callback");
+            }
+        });
     }
 
 
