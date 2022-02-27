@@ -50,7 +50,7 @@ public class CSGOLogin extends AppCompatActivity {
         // Check if user is signed in (non-null) and go to welcome screen if user is logged in.
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
-            new CSGOActivityStarter(this,CSGOWelcome.class);
+            new CSGOActivityStarter(this,MainActivity.class);
         }
 
     }
