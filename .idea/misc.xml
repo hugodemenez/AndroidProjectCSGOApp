@@ -4,8 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/black_round_corners_background.xml" value="0.6585" />
+        <entry key="app/src/main/res/layout/activity_addcontentlayout.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_csgosign.xml" value="0.302536231884058" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_video_test.xml" value="0.4390625" />
+        <entry key="app/src/main/res/layout/chooselayout.xml" value="0.4390625" />
         <entry key="app/src/main/res/layout/infernolayout.xml" value="0.4390625" />
         <entry key="app/src/main/res/layout/loginlayout.xml" value="0.335" />
         <entry key="app/src/main/res/layout/mapslayout.xml" value="0.4390625" />

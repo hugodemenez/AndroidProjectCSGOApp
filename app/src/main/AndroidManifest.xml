@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CSGOApp">
         <activity
+            android:name=".addcontentlayout"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
