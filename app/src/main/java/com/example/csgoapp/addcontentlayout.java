@@ -12,9 +12,11 @@ import android.widget.EditText;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -72,6 +74,7 @@ public class addcontentlayout extends AppCompatActivity {
                         Log.w("OK", "Error adding document", e);
                     }
                 });
+
     }
 
     public void onClickBackButton(View view) {
