@@ -37,6 +37,7 @@
         android:layout_width="70dp"
         android:layout_height="65dp"
         android:background="@color/cardview_shadow_end_color"
+        android:backgroundTint="@color/black"
         android:contentDescription="@android:string/cancel"
         android:onClick="onClickBackButton"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,6 +75,15 @@
         app:layout_constraintHorizontal_bias="0.949"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinnerGrenade" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="409dp"
+        android:layout_height="342dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAddContent"
+        tools:listitem="@layout/listlayout" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
