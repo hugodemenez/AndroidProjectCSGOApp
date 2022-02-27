@@ -47,7 +47,6 @@ public class CSGOWelcome extends AppCompatActivity {
         finish();
     }
 
-
     void callAPI(){
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://api.quotable.io/")
