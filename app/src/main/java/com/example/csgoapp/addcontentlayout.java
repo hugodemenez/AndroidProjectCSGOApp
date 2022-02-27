@@ -11,6 +11,7 @@ import android.widget.EditText;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -71,5 +72,18 @@ public class addcontentlayout extends AppCompatActivity {
                         Log.w("OK", "Error adding document", e);
                     }
                 });
+    }
+
+    public void onClickBackButton(View view) {
+
+        finish();
+    }
+
+    public void onClickLogout(View view){
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(this, CSGOLogin.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        finish();
     }
 }
