@@ -2,6 +2,7 @@ package com.example.csgoapp;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,15 +14,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
-    private final List<String> mValues;
+    private final List<Content> mValues;
+    private final Context contextRecyclerView;
 
-
-    public RecyclerViewAdapter(List<String> items) {
-
+    public RecyclerViewAdapter(List<Content> items,Context context) {
+        contextRecyclerView = context;
         mValues = items;
     }
 
@@ -33,11 +36,19 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        holder.button.setText(mValues.get(position));
-        holder.button.setOnClickListener(new Button.OnClickListener() {
-            public void onClick(View v) {
-
-            }
+        Content content = mValues.get(position);
+        holder.button.setText(content.contentTitle);
+        holder.button.setOnClickListener(v -> {
+            Log.e("Button",content.contentTitle);
+            Map<String,String> map = new HashMap<>();
+            map.put("map", content.map);
+            map.put("grenade", content.grenade);
+            map.put("side", content.side);
+            map.put("contentTitle", content.contentTitle);
+            map.put("videoUrl", content.videoUrl);
+            map.put("image1Url", content.image1Url);
+            map.put("image2Url", content.image2Url);
+            new CSGOActivityStarter(contextRecyclerView,map,MainActivity.class);
         });
 
 
