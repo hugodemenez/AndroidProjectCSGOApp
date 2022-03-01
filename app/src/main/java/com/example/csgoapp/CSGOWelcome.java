@@ -39,6 +39,7 @@ public class CSGOWelcome extends AppCompatActivity {
             finish();
         }
 
+        new CSGOActivityStarter(this,MainActivity.class);
         callAPI();
     }
 

@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -69,6 +70,26 @@ public class CSGOChoose extends AppCompatActivity {
         // Apply the adapter to the spinner
         spinnerGrenade.setAdapter(adapterGrenade);
 
+        spinnerGrenade.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+                addContentFromDatabaseToAdapter();
+            }
+            public void onNothingSelected(AdapterView<?> parent)
+            {
+            }
+        });
+        spinnerSide.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+                addContentFromDatabaseToAdapter();
+            }
+            public void onNothingSelected(AdapterView<?> parent)
+            {
+            }
+        });
+
+
         recyclerView = findViewById(R.id.recyclerView);
 
         LinearLayoutManager llm = new LinearLayoutManager(this);
@@ -99,9 +120,10 @@ public class CSGOChoose extends AppCompatActivity {
         new CSGOActivityStarter(this,extras,addcontentlayout.class);
     }
 
-    List<Content> contents = new ArrayList<Content>();
+
 
     public void addContentFromDatabaseToAdapter(){
+        List<Content> contents = new ArrayList<Content>();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         Context context = this;
         db.collection("contents")
