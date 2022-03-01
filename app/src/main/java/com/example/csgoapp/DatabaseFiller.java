@@ -15,16 +15,12 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity {
+public class DatabaseFiller   {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        public DatabaseFiller(){
 
         addToDb( "Inferno",
-        "Smoke",
+        "Smokes",
         "Terrorists",
         "Banana to deep CT",
         "https://www.youtube.com/watch?v=qwKYv0fMX5I",
@@ -32,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         "https://i.ibb.co/Fs2y0Sf/20220301190156-1.jpg"
         );
         addToDb( "Inferno",
-                "Smoke",
+                "Smokes",
                 "Terrorists",
                 "Banana to coffin",
                 "https://www.youtube.com/watch?v=pZBR6CXfCVQ",
@@ -40,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 "https://i.ibb.co/z6XpdrK/20220227173849-1.jpg"
         );
         addToDb( "Inferno",
-                "Smoke",
+                "Smokes",
                 "Terrorists",
                 "Banana cross pool",
                 "https://www.youtube.com/watch?v=l3GK8czdSv8",
@@ -48,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 "https://i.ibb.co/chYwGhJ/20220227174118-1.jpg"
         );
         addToDb( "Inferno",
-                "Smoke",
+                "Smokes",
                 "Terrorists",
                 "Mid to plane",
                 "https://www.youtube.com/watch?v=mapt01PeIqM",
@@ -56,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 "https://i.ibb.co/xXQzHpy/20220227184602-1.jpg"
         );
         addToDb( "Inferno",
-                "Smoke",
+                "Smokes",
                 "Terrorists",
                 "Pit to plane",
                 "https://www.youtube.com/watch?v=WuloTQe7Nd0",
@@ -64,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 "https://i.ibb.co/GR81xCq/20220227180351-1.jpg"
         );
         addToDb( "Inferno",
-                "Smoke",
+                "Smokes",
                 "Terrorists",
                 "Mid to long",
                 "https://www.youtube.com/watch?v=d4VSBGPoE5E",
@@ -72,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 "https://i.ibb.co/4mqsBKk/20220227180125-1.jpg"
         );
         addToDb( "Inferno",
-                "Smoke",
+                "Smokes",
                 "Terrorists",
                 "Mid to short",
                 "https://www.youtube.com/watch?v=K4_x0S-pCmU",
@@ -80,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 "https://i.ibb.co/2vNb5XJ/20220227180123-1.jpg"
         );
         addToDb( "Inferno",
-                "Smoke",
+                "Smokes",
                 "Terrorists",
                 "Appart to balcony",
                 "https://www.youtube.com/watch?v=5BcXp_dsW6w",
@@ -88,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 "https://i.ibb.co/Pxsn9F7/20220227180619-1.jpg"
         );
         addToDb( "Inferno",
-                "Molotov",
+                "Incendiary",
                 "Terrorists",
                 "Second mid to boost short",
                 "https://www.youtube.com/watch?v=ZCuduQaMLw0",
@@ -96,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 "https://i.ibb.co/cJRcmvC/20220227181018-1.jpg"
         );
         addToDb( "Inferno",
-                "Molotov",
+                "Incendiary",
                 "Terrorists",
                 "Coner long",
                 "https://www.youtube.com/watch?v=fkUcuFWRRzI",
@@ -104,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
                 "https://i.ibb.co/0jBJCfR/20220227180800-1.jpg"
         );
         addToDb( "Inferno",
-                "Molotov",
+                "Incendiary",
                 "Terrorists",
                 "Car to new box",
                 "https://www.youtube.com/watch?v=H42BCUodvwc",
@@ -112,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
                 "https://i.ibb.co/hX4qRRd/20220227181404-1.jpg"
         );
         addToDb( "Inferno",
-                "Molotov",
+                "Incendiary",
                 "Terrorists",
                 "B sandwich",
                 "https://www.youtube.com/watch?v=EqMZvwozzOE",
@@ -120,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
                 "https://i.ibb.co/mqBDbkH/20220227181647-1.jpg"
         );
         addToDb( "Inferno",
-                "Molotov",
+                "Incendiary",
                 "Terrorists",
                 "B Dark",
                 "https://www.youtube.com/watch?v=1j3dDdrbl-w",
@@ -128,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
                 "https://i.ibb.co/7Y946X5/20220227181459-1.jpg"
         );
         addToDb( "Inferno",
-                "Smoke",
+                "Smokes",
                 "CounterTerrorists",
                 "Deep banana",
                 "https://www.youtube.com/watch?v=Zko5STitbzo",
@@ -136,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
                 "https://i.ibb.co/MgbBz14/20220227181758-1.jpg"
         );
         addToDb( "Inferno",
-                "Smoke",
+                "Smokes",
                 "CounterTerrorists",
                 "Half wall banana",
                 "https://www.youtube.com/watch?v=9ht3tzS-2sE",
@@ -144,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
                 "https://i.ibb.co/CmcQFf9/20220227182118-1.jpg"
         );
         addToDb( "Inferno",
-                "Smoke",
+                "Smokes",
                 "CounterTerrorists",
                 "Cross B site",
                 "https://www.youtube.com/watch?v=LUokz5ue8ho",
@@ -152,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
                 "https://i.ibb.co/cv3xSzG/20220301191821-1.jpg"
         );
         addToDb( "Inferno",
-                "Smoke",
+                "Smokes",
                 "CounterTerrorists",
                 "Retake A short",
                 "https://www.youtube.com/watch?v=MQTvyYSxJDs",
@@ -160,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
                 "https://i.ibb.co/pZ8dLwC/20220227182523-1.jpg"
         );
         addToDb( "Inferno",
-                "Smoke",
+                "Smokes",
                 "CounterTerrorists",
                 "Mid from CT",
                 "https://www.youtube.com/watch?v=JzT4sy7ipYQ",
@@ -168,17 +164,13 @@ public class MainActivity extends AppCompatActivity {
                 "https://i.ibb.co/N7pZBrL/20220227182420-1.jpg"
         );
         addToDb( "Inferno",
-                "Smoke",
+                "Smokes",
                 "CounterTerrorists",
                 "Retake apartment",
                 "https://www.youtube.com/watch?v=LQMNpAPUllU",
                 "https://i.ibb.co/W3NxKqd/20220227182623-1.jpg",
                 "https://i.ibb.co/WHYfR2G/20220227182641-1.jpg"
         );
-
-
-
-
     }
 
 
