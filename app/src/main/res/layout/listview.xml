@@ -7,19 +7,23 @@
 
     <Button
         android:id="@+id/buttonChoose"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="318dp"
-        android:layout_height="35dp"
+        style="@style/Widget.Material3.Button.ElevatedButton"
+        android:layout_width="324dp"
+        android:layout_height="40dp"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="12dp"
-        android:backgroundTint="#C12222"
+        android:backgroundTint="@color/black"
         android:text="Button"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/white"
         app:iconTint="#9E4545"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        app:rippleColor="@color/white" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
