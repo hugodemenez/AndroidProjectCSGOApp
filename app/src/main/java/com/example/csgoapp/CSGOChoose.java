@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -32,12 +33,23 @@ public class CSGOChoose extends AppCompatActivity {
     private Spinner spinnerSide;
     private Spinner spinnerGrenade;
     private RecyclerView recyclerView;
-
+    private String map;
+    private TextView mapName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chooselayout);
+        mapName = findViewById(R.id.mapName);
+
+        final Intent intent = getIntent();
+        if(null!=intent){
+            final Bundle extras = intent.getExtras();
+            if(null!=extras){
+                map = extras.getString("map");
+                mapName.setText(map);
+            }
+        }
 
         spinnerSide = findViewById(R.id.spinnerSide);
         // Create an ArrayAdapter using the string array and a default spinner layout
@@ -82,6 +94,7 @@ public class CSGOChoose extends AppCompatActivity {
         Map<String,String> extras = new HashMap<String,String>() {{
             put("side",spinnerSide.getSelectedItem().toString());
             put("grenade",spinnerGrenade.getSelectedItem().toString());
+            put("map",map);
         }};
         new CSGOActivityStarter(this,extras,addcontentlayout.class);
     }
@@ -99,15 +112,20 @@ public class CSGOChoose extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Create a new user with a first and last name
                             for (QueryDocumentSnapshot document : Objects.requireNonNull(task.getResult())) {
-                                contents.add(new Content(
-                                        (String)document.getData().get("map"),
-                                        (String)document.getData().get("grenade"),
-                                        (String)document.getData().get("side"),
-                                        (String)document.getData().get("contentTitle"),
-                                        (String)document.getData().get("videoUrl"),
-                                        (String)document.getData().get("image1Url"),
-                                        (String)document.getData().get("image2Url")
-                                        ));
+                                if(spinnerSide.getSelectedItem().toString().equals((String)document.getData().get("side"))
+                                        && spinnerGrenade.getSelectedItem().toString().equals((String)document.getData().get("grenade"))
+                                            && map.equals((String)document.getData().get("map"))
+                                ){
+                                    contents.add(new Content(
+                                            (String)document.getData().get("map"),
+                                            (String)document.getData().get("grenade"),
+                                            (String)document.getData().get("side"),
+                                            (String)document.getData().get("contentTitle"),
+                                            (String)document.getData().get("videoUrl"),
+                                            (String)document.getData().get("image1Url"),
+                                            (String)document.getData().get("image2Url")
+                                            ));
+                                }
                             }
                             recyclerView.setAdapter(new RecyclerViewAdapter(contents,context));
                         } else {
@@ -116,55 +134,5 @@ public class CSGOChoose extends AppCompatActivity {
                     }
                 });
 
-    }
-
-    public void populateDatabase(){
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        CollectionReference cities = db.collection("cities");
-
-        Map<String, Object> data1 = new HashMap<>();
-        data1.put("name", "San Francisco");
-        data1.put("state", "CA");
-        data1.put("country", "USA");
-        data1.put("capital", false);
-        data1.put("population", 860000);
-        data1.put("regions", Arrays.asList("west_coast", "norcal"));
-        cities.document("SF").set(data1);
-
-        Map<String, Object> data2 = new HashMap<>();
-        data2.put("name", "Los Angeles");
-        data2.put("state", "CA");
-        data2.put("country", "USA");
-        data2.put("capital", false);
-        data2.put("population", 3900000);
-        data2.put("regions", Arrays.asList("west_coast", "socal"));
-        cities.document("LA").set(data2);
-
-        Map<String, Object> data3 = new HashMap<>();
-        data3.put("name", "Washington D.C.");
-        data3.put("state", null);
-        data3.put("country", "USA");
-        data3.put("capital", true);
-        data3.put("population", 680000);
-        data3.put("regions", Arrays.asList("east_coast"));
-        cities.document("DC").set(data3);
-
-        Map<String, Object> data4 = new HashMap<>();
-        data4.put("name", "Tokyo");
-        data4.put("state", null);
-        data4.put("country", "Japan");
-        data4.put("capital", true);
-        data4.put("population", 9000000);
-        data4.put("regions", Arrays.asList("kanto", "honshu"));
-        cities.document("TOK").set(data4);
-
-        Map<String, Object> data5 = new HashMap<>();
-        data5.put("name", "Beijing");
-        data5.put("state", null);
-        data5.put("country", "China");
-        data5.put("capital", true);
-        data5.put("population", 21500000);
-        data5.put("regions", Arrays.asList("jingjinji", "hebei"));
-        cities.document("BJ").set(data5);
     }
 }

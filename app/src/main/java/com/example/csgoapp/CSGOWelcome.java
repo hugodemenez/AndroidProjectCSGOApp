@@ -77,6 +77,6 @@ public class CSGOWelcome extends AppCompatActivity {
     }
 
     public void onClickSpotGuide(View view){
-        new CSGOActivityStarter(this,CSGOChoose.class);
+        new CSGOActivityStarter(this, CSGOMaps.class);
     }
 }

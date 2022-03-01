@@ -13,11 +13,9 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,6 +24,7 @@ public class addcontentlayout extends AppCompatActivity {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private String grenade = "";
     private String side = "";
+    private String map = "";
     private EditText contentTitle;
     private EditText videoUrl;
     private EditText image1Url;
@@ -34,13 +33,14 @@ public class addcontentlayout extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_addcontentlayout);
+        setContentView(R.layout.addcontentlayout);
         final Intent intent = getIntent();
         if(null!=intent){
             final Bundle extras = intent.getExtras();
             if(null!=extras){
                 grenade = extras.getString("grenade");
                 side = extras.getString("side");
+                map = extras.getString("map");
             }
         }
     }
@@ -52,7 +52,7 @@ public class addcontentlayout extends AppCompatActivity {
         contentTitle = findViewById(R.id.editTextContentTitle);
         // Create a new user with a first and last name
         Map<String, Object> content = new HashMap<>();
-        content.put("map", "Inferno");
+        content.put("map", map);
         content.put("grenade", grenade);
         content.put("side", side);
         content.put("contentTitle", contentTitle.getText().toString());

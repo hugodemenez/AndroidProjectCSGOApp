@@ -11,6 +11,8 @@
         <entry key="app/src/main/res/layout/chooselayout.xml" value="0.4390625" />
         <entry key="app/src/main/res/layout/contentdisplaylayout.xml" value="0.30625" />
         <entry key="app/src/main/res/layout/infernolayout.xml" value="0.4390625" />
+        <entry key="app/src/main/res/layout/lineuplayout.xml" value="0.296875" />
+        <entry key="app/src/main/res/layout/listlayout.xml" value="0.296875" />
         <entry key="app/src/main/res/layout/listview.xml" value="0.2740628166160081" />
         <entry key="app/src/main/res/layout/loginlayout.xml" value="0.335" />
         <entry key="app/src/main/res/layout/mapslayout.xml" value="0.4390625" />

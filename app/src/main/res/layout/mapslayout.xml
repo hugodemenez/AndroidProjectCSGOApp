@@ -20,11 +20,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton9"
+        android:id="@+id/buttonInferno"
         android:layout_width="258dp"
         android:layout_height="152dp"
         android:layout_marginTop="36dp"
         android:contentDescription="inferno"
+        android:onClick="buttonPress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,29 +33,31 @@
         app:srcCompat="@drawable/inferno2" />
 
     <ImageButton
-        android:id="@+id/imageButton11"
+        android:id="@+id/buttonMirage"
         android:layout_width="255dp"
         android:layout_height="143dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/mirage"
         android:contentDescription="mirage"
+        android:onClick="buttonPress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton9"
+        app:layout_constraintTop_toBottomOf="@+id/buttonInferno"
         app:srcCompat="@drawable/mirage" />
 
     <ImageButton
-        android:id="@+id/imageButton12"
+        android:id="@+id/buttonCobblestone"
         android:layout_width="255dp"
         android:layout_height="143dp"
         android:layout_marginTop="32dp"
         android:background="@drawable/cobblestone"
         android:contentDescription="cobblestone"
+        android:onClick="buttonPress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton11"
+        app:layout_constraintTop_toBottomOf="@+id/buttonMirage"
         app:srcCompat="@drawable/cobblestone" />
 
     <ImageButton
@@ -63,6 +66,7 @@
         android:layout_height="66dp"
         android:background="@color/cardview_shadow_end_color"
         android:contentDescription="@string/Log_out"
+        android:onClick="onClickLogout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logout" />
@@ -73,6 +77,7 @@
         android:layout_height="61dp"
         android:background="@color/cardview_shadow_end_color"
         android:contentDescription="@android:string/cancel"
+        android:onClick="onClickBackButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable" />
