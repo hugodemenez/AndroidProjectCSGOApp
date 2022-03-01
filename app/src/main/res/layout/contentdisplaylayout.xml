@@ -38,6 +38,7 @@
         android:layout_height="65dp"
         android:background="@color/cardview_shadow_end_color"
         android:contentDescription="@android:string/cancel"
+        android:onClick="onClickBackButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable" />
