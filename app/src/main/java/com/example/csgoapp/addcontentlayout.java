@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -21,6 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class addcontentlayout extends AppCompatActivity {
+
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private String grenade = "";
     private String side = "";
@@ -41,7 +43,6 @@ public class addcontentlayout extends AppCompatActivity {
                 side = extras.getString("side");
             }
         }
-
     }
 
     public void addContent(View view){
@@ -66,19 +67,23 @@ public class addcontentlayout extends AppCompatActivity {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
                         Log.d("OK", "DocumentSnapshot added with ID: " + documentReference.getId());
+                        Toast.makeText(addcontentlayout.this, "Content successfully added", Toast.LENGTH_SHORT).show();
+                        contentTitle.setText("");
+                        videoUrl.setText("");
+                        image1Url.setText("");
+                        image2Url.setText("");
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         Log.w("OK", "Error adding document", e);
+                        Toast.makeText(addcontentlayout.this, "Unable to add new content", Toast.LENGTH_SHORT).show();
                     }
                 });
-
     }
 
     public void onClickBackButton(View view) {
-
         finish();
     }
 

@@ -2,12 +2,14 @@ package com.example.csgoapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnPreparedListener;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.MediaController;
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private int position = 0;
     private MediaController mediaController;
     private Button buttonURL;
+    private String videoURL;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +30,21 @@ public class MainActivity extends AppCompatActivity {
 
         this.videoView = (VideoView) findViewById(R.id.videoView);
         this.buttonURL = (Button) findViewById(R.id.button_url);
+
+        final Intent intent = getIntent();
+        if(null!=intent){
+            final Bundle extras = intent.getExtras();
+            if(null!=extras){
+                videoURL = extras.getString("videoUrl");
+
+            }
+            else{
+                Log.e("Extras","empty");
+            }
+        }
+        else{
+            Log.e("Intent","empty");
+        }
 
         // Set the media controller buttons
         if (this.mediaController == null) {
@@ -65,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         this.buttonURL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String videoURL = VideoViewUtils.URL_VIDEO_SAMPLE;
+                Log.e("Trying to play video ",videoURL);
                 VideoViewUtils.playURLVideo(MainActivity.this, videoView, videoURL);
             }
         });
