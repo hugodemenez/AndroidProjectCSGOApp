@@ -1,19 +1,14 @@
 package com.example.csgoapp;
 
 import android.content.Context;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -48,7 +43,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             map.put("videoUrl", content.videoUrl);
             map.put("image1Url", content.image1Url);
             map.put("image2Url", content.image2Url);
-            new CSGOActivityStarter(contextRecyclerView,map,MainActivity.class);
+            new CSGOActivityStarter(contextRecyclerView,map, CSGOContentDisplay.class);
         });
 
 
