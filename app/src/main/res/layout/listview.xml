@@ -7,6 +7,7 @@
 
     <Button
         android:id="@+id/buttonChoose"
+        style="@android:style/Widget.Holo.Light.Button.Small"
         android:layout_width="318dp"
         android:layout_height="35dp"
         android:layout_marginTop="12dp"
