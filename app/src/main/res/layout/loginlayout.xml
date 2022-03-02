@@ -6,92 +6,93 @@
     android:layout_height="match_parent"
     android:background="@drawable/csgo" >
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="132dp"
-        android:hint="@string/Log_in"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-        android:textColorHint="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/buttonLogin"
-        style="@style/Widget.Material3.Button.ElevatedButton"
-        android:layout_width="302dp"
-        android:layout_height="67dp"
-        android:layout_marginTop="44dp"
-        android:backgroundTint="@color/black"
-        android:hint="Log In"
-        android:onClick="onClickLogin"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColorHint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/button_Signup"
-        style="@style/Widget.Material3.Button.ElevatedButton"
-        android:layout_width="302dp"
-        android:layout_height="67dp"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/material_dynamic_neutral_variant30"
-        android:hint="Sign Up"
-        android:onClick="onClickSign"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColorHint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="132dp"
+                android:hint="@string/Log_in"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+                android:textColorHint="@color/black" />
 
-    <Button
-        android:id="@+id/buttonForgot"
-        style="@style/Widget.Material3.Button.ElevatedButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:hint="Forgot Password ?"
-        android:onClick="onClickReset"
-        android:textAppearance="@style/TextAppearance.AppCompat.Small"
-        android:textColorHint="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_Signup" />
+            <EditText
+                android:id="@+id/editTextEmail"
+                android:layout_width="313dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/white_round_corners_background"
+                android:ems="10"
+                android:hint="@string/Email"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="10dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColorHint="@color/black" />
 
-    <EditText
-        android:id="@+id/editTextEmail"
-        android:layout_width="313dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/white_round_corners_background"
-        android:ems="10"
-        android:hint="@string/Email"
-        android:inputType="textEmailAddress"
-        android:paddingLeft="10dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColorHint="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+            <EditText
+                android:id="@+id/editTextPassword"
+                android:layout_width="316dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="28dp"
+                android:background="@drawable/white_round_corners_background"
+                android:ems="10"
+                android:hint="@string/Password"
+                android:inputType="textPassword"
+                android:paddingLeft="10dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColorHint="@color/black" />
 
-    <EditText
-        android:id="@+id/editTextPassword"
-        android:layout_width="316dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="28dp"
-        android:background="@drawable/white_round_corners_background"
-        android:ems="10"
-        android:hint="@string/Password"
-        android:inputType="textPassword"
-        android:paddingLeft="10dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColorHint="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
+            <Button
+                android:id="@+id/buttonLogin"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="302dp"
+                android:layout_height="67dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="44dp"
+                android:backgroundTint="@color/black"
+                android:hint="Log In"
+                android:onClick="onClickLogin"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColorHint="@color/white" />
+
+            <Button
+                android:id="@+id/button_Signup"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="302dp"
+                android:layout_height="67dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/material_dynamic_neutral_variant30"
+                android:hint="Sign Up"
+                android:onClick="onClickSign"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColorHint="@color/white" />
+
+            <Button
+                android:id="@+id/buttonForgot"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:hint="Forgot Password ?"
+                android:onClick="onClickReset"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColorHint="@color/black" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

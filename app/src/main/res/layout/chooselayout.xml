@@ -4,17 +4,78 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/material_dynamic_neutral70">
+    android:background="@color/purple_700">
 
-    <ImageView
-        android:id="@+id/mapImage"
-        android:layout_width="406dp"
-        android:layout_height="141dp"
-        android:scaleType="fitXY"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/infernoflou" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/mapName"
+                android:layout_width="match_parent"
+                android:layout_height="183dp"
+                android:background="@drawable/infernoflou"
+                android:hint="Inferno"
+                android:paddingTop="64dp"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+                android:textColorHint="@color/black" />
+
+            <Spinner
+                android:id="@+id/spinnerSide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="32dp"
+                android:backgroundTint="#070000"
+                android:popupBackground="@color/purple_700" />
+
+            <Spinner
+                android:id="@+id/spinnerGrenade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:layout_marginBottom="28dp"
+                android:backgroundTint="#070000"
+                android:gravity="center_horizontal"
+                android:popupBackground="@color/purple_700" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="409dp"
+                android:layout_height="342dp"
+                android:layout_gravity="center_horizontal"
+                tools:listitem="@layout/listview">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <Button
+                android:id="@+id/buttonAddContent"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="142dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="12dp"
+                android:background="@color/material_dynamic_primary30"
+                android:backgroundTint="@color/material_dynamic_neutral_variant20"
+                android:onClick="onClickAddContent"
+                android:text="AddContent"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="@color/black"
+                app:iconTint="@color/black"
+                app:rippleColor="@color/black" />
+
+        </LinearLayout>
+    </ScrollView>
 
     <ImageButton
         android:id="@+id/imageButton4"
@@ -38,68 +99,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable" />
-
-    <TextView
-        android:id="@+id/mapName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:hint="Inferno"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-        android:textColorHint="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Spinner
-        android:id="@+id/spinnerSide"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mapImage" />
-
-    <Spinner
-        android:id="@+id/spinnerGrenade"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerSide" />
-
-    <Button
-        android:id="@+id/buttonAddContent"
-        style="@style/Widget.Material3.Button.ElevatedButton"
-        android:layout_width="142dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="12dp"
-        android:background="@color/material_dynamic_primary30"
-        android:backgroundTint="@color/material_dynamic_neutral_variant20"
-        android:onClick="onClickAddContent"
-        android:text="AddContent"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:textColor="@color/black"
-        app:iconTint="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.949"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerGrenade"
-        app:rippleColor="@color/black" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="409dp"
-        android:layout_height="342dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAddContent"
-        tools:listitem="@layout/listview" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

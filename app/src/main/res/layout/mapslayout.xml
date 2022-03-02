@@ -4,59 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/material_dynamic_neutral70">
+    android:background="@drawable/csgo">
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:hint="Maps"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-        android:textColorHint="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <ImageButton
-        android:id="@+id/buttonInferno"
-        android:layout_width="258dp"
-        android:layout_height="152dp"
-        android:layout_marginTop="36dp"
-        android:background="@drawable/inferno2"
-        android:contentDescription="inferno"
-        android:onClick="buttonPress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-    <ImageButton
-        android:id="@+id/buttonMirage"
-        android:layout_width="255dp"
-        android:layout_height="143dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/mirage"
-        android:contentDescription="mirage"
-        android:onClick="buttonPress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonInferno" />
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="44dp"
+                android:hint="Maps"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+                android:textColorHint="@color/black" />
 
-    <ImageButton
-        android:id="@+id/buttonCobblestone"
-        android:layout_width="255dp"
-        android:layout_height="143dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/cobblestone"
-        android:contentDescription="cobblestone"
-        android:onClick="buttonPress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonMirage" />
+            <ImageButton
+                android:id="@+id/buttonInferno"
+                android:layout_width="258dp"
+                android:layout_height="152dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="36dp"
+                android:background="@drawable/inferno2"
+                android:contentDescription="inferno"
+                android:onClick="buttonPress" />
+
+            <ImageButton
+                android:id="@+id/buttonMirage"
+                android:layout_width="255dp"
+                android:layout_height="143dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/mirage"
+                android:contentDescription="mirage"
+                android:onClick="buttonPress" />
+
+            <ImageButton
+                android:id="@+id/buttonCobblestone"
+                android:layout_width="255dp"
+                android:layout_height="143dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/cobblestone"
+                android:contentDescription="cobblestone"
+                android:onClick="buttonPress" />
+
+        </LinearLayout>
+    </ScrollView>
 
     <ImageButton
         android:id="@+id/imageButton13"

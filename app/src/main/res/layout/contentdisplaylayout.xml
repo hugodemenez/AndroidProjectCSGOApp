@@ -4,22 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/purple_700"
     android:textAlignment="center"
     tools:context=".CSGOContentDisplay">
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="407dp"
-        android:layout_height="174dp"
-        android:background="@drawable/infernoflou"
-        android:hint="Inferno"
-        android:paddingLeft="110dp"
-        android:paddingTop="45dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-        android:textColorHint="@color/black"
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="174dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/infernoflou"
+                android:hint="Inferno"
+                android:paddingTop="64dp"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+                android:textColorHint="@color/black" />
+
+            <TextView
+                android:id="@+id/instruction"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="8dp"
+                android:text="Instruction"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+                android:id="@+id/videoView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                app:autoPlay="true"
+                app:videoId="9FTpCMWSUb4" />
+
+            <ImageView
+                android:id="@+id/image1View"
+                android:layout_width="match_parent"
+                android:layout_height="245dp"
+                android:visibility="visible"
+                tools:src="@tools:sample/avatars" />
+
+            <ImageView
+                android:id="@+id/image2View"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                tools:src="@tools:sample/avatars" />
+        </LinearLayout>
+    </ScrollView>
 
     <ImageButton
         android:id="@+id/imageButton8"
@@ -43,57 +92,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable" />
-
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/instruction"
-                android:layout_width="match_parent"
-                android:layout_height="24dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginBottom="8dp"
-                android:text="Instruction"
-                android:textAlignment="center"
-                android:textColor="#000000"
-                android:textStyle="bold" />
-
-            <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
-                android:id="@+id/videoView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:layout_marginBottom="0dp"
-                app:autoPlay="true"
-                app:videoId="9FTpCMWSUb4" />
-
-            <ImageView
-                android:id="@+id/image1View"
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:layout_marginBottom="0dp"
-                android:visibility="visible"
-                tools:src="@tools:sample/avatars" />
-
-            <ImageView
-                android:id="@+id/image2View"
-                android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:layout_marginBottom="0dp"
-                tools:src="@tools:sample/avatars" />
-        </LinearLayout>
-    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
