@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_700">
+    android:background="@color/beige">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -37,7 +37,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="32dp"
                 android:backgroundTint="#070000"
-                android:popupBackground="@color/purple_700" />
+                android:popupBackground="@color/beige" />
 
             <Spinner
                 android:id="@+id/spinnerGrenade"
@@ -47,7 +47,7 @@
                 android:layout_marginBottom="28dp"
                 android:backgroundTint="#070000"
                 android:gravity="center_horizontal"
-                android:popupBackground="@color/purple_700" />
+                android:popupBackground="@color/beige" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
