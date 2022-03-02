@@ -17,7 +17,8 @@ import java.util.Map;
 
 public class DatabaseFiller   {
 
-        public DatabaseFiller(){
+
+    public DatabaseFiller(){
 
         addToDb( "Inferno",
         "Smokes",
@@ -125,7 +126,7 @@ public class DatabaseFiller   {
         );
         addToDb( "Inferno",
                 "Smokes",
-                "CounterTerrorists",
+                "Counter-Terrorists",
                 "Deep banana",
                 "https://www.youtube.com/watch?v=Zko5STitbzo",
                 "https://i.ibb.co/KG2zCdK/20220227181734-1.jpg",
@@ -133,7 +134,7 @@ public class DatabaseFiller   {
         );
         addToDb( "Inferno",
                 "Smokes",
-                "CounterTerrorists",
+                "Counter-Terrorists",
                 "Half wall banana",
                 "https://www.youtube.com/watch?v=9ht3tzS-2sE",
                 "https://i.ibb.co/cx3R17S/20220227181916-1.jpg",
@@ -141,7 +142,7 @@ public class DatabaseFiller   {
         );
         addToDb( "Inferno",
                 "Smokes",
-                "CounterTerrorists",
+                "Counter-Terrorists",
                 "Cross B site",
                 "https://www.youtube.com/watch?v=LUokz5ue8ho",
                 "https://i.ibb.co/yQKcCNf/20220227182216-1.jpg",
@@ -149,7 +150,7 @@ public class DatabaseFiller   {
         );
         addToDb( "Inferno",
                 "Smokes",
-                "CounterTerrorists",
+                "Counter-Terrorists",
                 "Retake A short",
                 "https://www.youtube.com/watch?v=MQTvyYSxJDs",
                 "https://i.ibb.co/hF3Gyp7/20220227182546-1.jpg",
@@ -157,7 +158,7 @@ public class DatabaseFiller   {
         );
         addToDb( "Inferno",
                 "Smokes",
-                "CounterTerrorists",
+                "Counter-Terrorists",
                 "Mid from CT",
                 "https://www.youtube.com/watch?v=JzT4sy7ipYQ",
                 "https://i.ibb.co/V3449Ck/20220227182441-1.jpg",
@@ -165,7 +166,7 @@ public class DatabaseFiller   {
         );
         addToDb( "Inferno",
                 "Smokes",
-                "CounterTerrorists",
+                "Counter-Terrorists",
                 "Retake apartment",
                 "https://www.youtube.com/watch?v=LQMNpAPUllU",
                 "https://i.ibb.co/W3NxKqd/20220227182623-1.jpg",

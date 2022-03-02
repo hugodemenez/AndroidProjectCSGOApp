@@ -10,14 +10,19 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class addcontentlayout extends AppCompatActivity {
 
@@ -60,27 +65,49 @@ public class addcontentlayout extends AppCompatActivity {
         content.put("image1Url", image1Url.getText().toString());
         content.put("image2Url", image2Url.getText().toString());
 
-        // Add a new document with a generated ID
+        // Check if content is already in db
         db.collection("contents")
-                .add(content)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Log.d("OK", "DocumentSnapshot added with ID: " + documentReference.getId());
-                        Toast.makeText(addcontentlayout.this, "Content successfully added", Toast.LENGTH_SHORT).show();
-                        contentTitle.setText("");
-                        videoUrl.setText("");
-                        image1Url.setText("");
-                        image2Url.setText("");
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.w("OK", "Error adding document", e);
-                        Toast.makeText(addcontentlayout.this, "Unable to add new content", Toast.LENGTH_SHORT).show();
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            // Create a new user with a first and last name
+                            for (QueryDocumentSnapshot document : Objects.requireNonNull(task.getResult())) {
+                                if(contentTitle.getText().toString().equals((String)document.getData().get("contentTitle")) || videoUrl.getText().toString().equals((String)document.getData().get("videoUrl"))
+                                ){
+                                    Toast.makeText(addcontentlayout.this, "Content already in DB", Toast.LENGTH_SHORT).show();
+                                    return;
+                                }
+                            }
+                            // Add a new document with a generated ID
+                            db.collection("contents")
+                                    .add(content)
+                                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                        @Override
+                                        public void onSuccess(DocumentReference documentReference) {
+                                            Log.d("OK", "DocumentSnapshot added with ID: " + documentReference.getId());
+                                            Toast.makeText(addcontentlayout.this, "Content successfully added", Toast.LENGTH_SHORT).show();
+                                            contentTitle.setText("");
+                                            videoUrl.setText("");
+                                            image1Url.setText("");
+                                            image2Url.setText("");
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Log.w("OK", "Error adding document", e);
+                                            Toast.makeText(addcontentlayout.this, "Unable to add new content", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+                        } else {
+                            Log.d("Database Get", "Error getting documents: ", task.getException());
+                        }
                     }
                 });
+
+
     }
 
     public void onClickBackButton(View view) {
