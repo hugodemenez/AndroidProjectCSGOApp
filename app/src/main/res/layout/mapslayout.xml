@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/material_dynamic_neutral_variant80">
+    android:background="@color/material_dynamic_neutral70">
 
     <TextView
         android:id="@+id/textView6"
@@ -24,13 +24,13 @@
         android:layout_width="258dp"
         android:layout_height="152dp"
         android:layout_marginTop="36dp"
+        android:background="@drawable/inferno2"
         android:contentDescription="inferno"
         android:onClick="buttonPress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
-        app:srcCompat="@drawable/inferno2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <ImageButton
         android:id="@+id/buttonMirage"
@@ -43,8 +43,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonInferno"
-        app:srcCompat="@drawable/mirage" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonInferno" />
 
     <ImageButton
         android:id="@+id/buttonCobblestone"
@@ -57,8 +56,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonMirage"
-        app:srcCompat="@drawable/cobblestone" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonMirage" />
 
     <ImageButton
         android:id="@+id/imageButton13"
