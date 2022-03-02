@@ -74,8 +74,8 @@ public class addcontentlayout extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Create a new user with a first and last name
                             for (QueryDocumentSnapshot document : Objects.requireNonNull(task.getResult())) {
-                                if(contentTitle.getText().toString().equals((String)document.getData().get("contentTitle")) || videoUrl.getText().toString().equals((String)document.getData().get("videoUrl"))
-                                ){
+                                if(contentTitle.getText().toString().equals((String)document.getData().get("contentTitle")) || videoUrl.getText().toString().equals((String)document.getData().get("videoUrl")))
+                                {
                                     Toast.makeText(addcontentlayout.this, "Content already in DB", Toast.LENGTH_SHORT).show();
                                     return;
                                 }
