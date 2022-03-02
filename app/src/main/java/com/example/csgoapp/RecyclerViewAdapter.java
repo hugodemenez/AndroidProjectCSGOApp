@@ -43,6 +43,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             map.put("videoUrl", content.videoUrl);
             map.put("image1Url", content.image1Url);
             map.put("image2Url", content.image2Url);
+            map.put("instruction",content.instruction);
             new CSGOActivityStarter(contextRecyclerView,map, CSGOContentDisplay.class);
         });
 

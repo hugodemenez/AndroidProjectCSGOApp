@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
+
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
@@ -22,12 +24,14 @@ public class CSGOContentDisplay extends AppCompatActivity {
     private ImageView image1View;
     private ImageView image2View;
     private YouTubePlayerView videoView;
+    private TextView instructionView;
 
     private String videoID;
 
     private String videoURL;
     private String image1URL;
     private String image2URL;
+    private String instruction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,7 @@ public class CSGOContentDisplay extends AppCompatActivity {
                 videoURL = extras.getString("videoUrl");
                 image1URL = extras.getString("image1Url");
                 image2URL = extras.getString("image2Url");
+                instruction = extras.getString("instruction");
             }
             else{
                 Log.e("Extras","empty");
@@ -54,6 +59,9 @@ public class CSGOContentDisplay extends AppCompatActivity {
         image1View = findViewById(R.id.image1View);
         // Declaring and initializing the ImageView
         image2View = findViewById(R.id.image2View);
+        //// Declaring and initializing the TextView
+        instructionView = findViewById(R.id.instruction);
+        instructionView.setText(instruction);
 
 
         Glide.with(this).load(image1URL).into(image1View);

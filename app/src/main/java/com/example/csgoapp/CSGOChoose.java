@@ -145,7 +145,8 @@ public class CSGOChoose extends AppCompatActivity {
                                             (String)document.getData().get("contentTitle"),
                                             (String)document.getData().get("videoUrl"),
                                             (String)document.getData().get("image1Url"),
-                                            (String)document.getData().get("image2Url")
+                                            (String)document.getData().get("image2Url"),
+                                            (String)document.getData().get("instruction")
                                             ));
                                 }
                             }
